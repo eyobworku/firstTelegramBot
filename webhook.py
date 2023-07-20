@@ -7,11 +7,8 @@ from dotenv import load_dotenv
 
 
 # Define your bot token
-# BOT_TOKEN = '6003301685:AAFSmqvk4IWe7mn9xt2HsLagLMjV1CIzpJA'
-
 app = Flask(__name__)
-load_dotenv()
-app.config['MONGO_URI']=os.environ.get('MONGO_URI')
+app.config['MONGO_URI']=os.getenv('MONGO_URI')
 mongo = PyMongo()
 mongo.init_app(app)
 
