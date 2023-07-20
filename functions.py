@@ -1,9 +1,15 @@
 import json
-import requests
+#import requests
+import os
+from dotenv import load_dotenv
 
-BOT_TOKEN = '6003301685:AAFSmqvk4IWe7mn9xt2HsLagLMjV1CIzpJA'
+load_dotenv()
+
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
 methods = []
 post_fields = [{}]
+
+print(str(BOT_TOKEN)+'   hi')
 
 def echo_input(update):
         # Using the Telegram Bot API method "sendMessage",
@@ -21,5 +27,5 @@ def send_response(update):
         for i in range(len(methods)):
             url = f"https://api.telegram.org/bot{BOT_TOKEN}/{methods[i]}"
             headers = {"Content-Type": "application/json"}
-            response = requests.post(url, headers=headers, json=post_fields[i])
+            #response = requests.post(url, headers=headers, json=post_fields[i])
             # Process the response if needed
