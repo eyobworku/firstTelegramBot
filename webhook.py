@@ -22,7 +22,7 @@ def webhook():
     post_fields = [{}]
 
     # Do the thing
-    echo_input(update)
+    route_requests(update)
 
     # Send it all to Telegram's servers using HTTP POST
     send_response(update)
