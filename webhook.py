@@ -19,7 +19,7 @@ def webhook():
 
     # Initialize two variables used to respond to Telegram
     methods = []
-    post_fields = [{}]
+    post_fields = []
 
     # Do the thing
     route_requests(update)
